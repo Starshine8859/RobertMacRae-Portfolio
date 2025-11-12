@@ -1,4 +1,23 @@
-/* ...existing code... */
+:root {
+    --bg-primary: #1a1a1a;
+    --bg-secondary: #2d2d2d;
+    --text-primary: #e0e0e0;
+    --text-secondary: #b0b0b0;
+    --card-bg: #2d2d2d;
+    --card-shadow: rgba(0, 0, 0, 0.5);
+    --border-color: #444;
+}
+
+body.light-mode {
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8f9fa;
+    --text-primary: #333;
+    --text-secondary: #555;
+    --card-bg: #ffffff;
+    --card-shadow: rgba(0, 0, 0, 0.2);
+    --border-color: #e0e0e0;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -8,8 +27,9 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    color: #333;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: var(--text-primary);
+    background: var(--bg-primary);
+    transition: background 0.3s ease, color 0.3s ease;
     overflow-x: hidden;
 }
 
@@ -67,17 +87,17 @@ h1 {
 }
 
 .card {
-    background: white;
+    background: var(--card-bg);
     border-radius: 15px;
     padding: 40px;
     margin: 30px 0;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    box-shadow: 0 10px 30px var(--card-shadow);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+    box-shadow: 0 15px 40px var(--card-shadow);
 }
 
 h2 {
@@ -90,7 +110,7 @@ h2 {
 
 .intro {
     font-size: 1.1em;
-    color: #555;
+    color: var(--text-secondary);
     line-height: 1.8;
 }
 
@@ -102,7 +122,7 @@ h2 {
 }
 
 .skill-category {
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    background: #3d3d3d;
     padding: 25px;
     border-radius: 10px;
     transition: transform 0.3s ease;
@@ -113,9 +133,14 @@ h2 {
 }
 
 .skill-category h3 {
-    color: #764ba2;
+    color: #667eea;
     margin-bottom: 15px;
     font-size: 1.3em;
+}
+
+.skill-category p {
+    color: var(--text-secondary);
+    line-height: 1.6;
 }
 
 .skill-list {
@@ -126,6 +151,7 @@ h2 {
     padding: 8px 0;
     padding-left: 25px;
     position: relative;
+    color: var(--text-secondary);
 }
 
 .skill-list li:before {
@@ -137,7 +163,7 @@ h2 {
 .experience-item {
     margin-bottom: 40px;
     padding: 25px;
-    background: #f8f9fa;
+    background: #3d3d3d;
     border-left: 5px solid #667eea;
     border-radius: 5px;
 }
@@ -145,10 +171,10 @@ h2 {
 .project-item {
     margin-bottom: 40px;
     padding: 0;
-    background: #fff;
+    background: var(--card-bg);
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px var(--card-shadow);
 }
 
 .project-slider {
@@ -243,18 +269,18 @@ h2 {
 
 .project-name {
     font-size: 1.5em;
-    color: #764ba2;
+    color: #667eea;
     font-weight: bold;
 }
 
 .date-range {
-    color: #666;
+    color: var(--text-secondary);
     font-style: italic;
 }
 
 .experience-description,
 .project-description {
-    color: #555;
+    color: var(--text-secondary);
     line-height: 1.8;
 }
 
@@ -268,7 +294,7 @@ h2 {
 
 .company-name {
     font-size: 1.5em;
-    color: #764ba2;
+    color: #667eea;
     font-weight: bold;
 }
 
@@ -282,7 +308,7 @@ h2 {
 .cta-section {
     text-align: center;
     padding: 60px 20px;
-    background: white;
+    background: var(--card-bg);
     border-radius: 15px;
     margin: 40px 0;
 }
@@ -306,20 +332,21 @@ h2 {
 }
 
 .fun-fact {
-    background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+    background: #5a4a00;
     padding: 20px;
     border-radius: 10px;
     margin: 20px 0;
     text-align: center;
     font-style: italic;
-    color: #2d3436;
+    color: #e0e0e0;
 }
 
 footer {
     text-align: center;
     padding: 30px;
-    color: white;
+    color: var(--text-secondary);
     font-size: 0.9em;
+    background: var(--bg-secondary);
 }
 
 .badge {
@@ -333,7 +360,7 @@ footer {
 }
 
 .resume-section {
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    background: #3d3d3d;
     padding: 25px;
     border-radius: 10px;
     text-align: center;
@@ -341,8 +368,125 @@ footer {
 }
 
 .resume-section p {
-    color: #555;
+    color: var(--text-secondary);
     margin: 10px 0;
+}
+
+/* Navbar Styles */
+.navbar {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.navbar-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-logo a {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+.navbar-logo a:hover {
+    opacity: 0.8;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-item {
+    margin: 0;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: opacity 0.3s ease;
+}
+
+.nav-link:hover {
+    opacity: 0.8;
+}
+
+.nav-link-cta {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 8px 16px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.nav-link-cta:hover {
+    background: rgba(255, 255, 255, 0.3);
+    opacity: 1;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 6px;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: white;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(8px, 8px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* Theme toggle button */
+.theme-toggle {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    font-size: 1.5em;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 998;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.6);
 }
 
 @media (max-width: 768px) {
@@ -358,5 +502,37 @@ footer {
     .skills-grid {
         grid-template-columns: 1fr;
     }
+
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 60px;
+        flex-direction: column;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        gap: 0;
+        padding: 20px 0;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-item {
+        padding: 15px 0;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .theme-toggle {
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        font-size: 1.2em;
+    }
 }
-/* ...existing code... */

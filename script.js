@@ -74,6 +74,39 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
+// Mobile menu toggle
+const hamburger = document.querySelector('.hamburger');
+const navMenu = document.querySelector('.nav-menu');
+
+if (hamburger) {
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+    });
+
+    // Close menu when a link is clicked
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', (e) => {
+            const href = link.getAttribute('href');
+            // Allow smooth scroll to work, then close menu
+            if (href !== '#contact') {
+                e.preventDefault();
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+                const target = document.querySelector(href);
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            } else {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            }
+        });
+    });
+}
+
 // Add entrance animation to cards
 const cards = document.querySelectorAll('.card');
 const observerOptions = {

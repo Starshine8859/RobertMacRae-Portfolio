@@ -7,7 +7,27 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-logo">
+                <a href="#home">👨‍💻 Robert MacRae</a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="#skills" class="nav-link">Skills</a></li>
+                <li class="nav-item"><a href="#experience" class="nav-link">Experience</a></li>
+                <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
+                <li class="nav-item"><a href="#contact" class="nav-link nav-link-cta" onclick="showContactMessage(event)">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <header id="home">
         <div class="container">
             <h1>👨‍💻 Your Technical Co-Founder </h1>
             <h1>(Without the Equity Drama)</h1>
@@ -31,7 +51,7 @@
         </div>
 
         <div class="card">
-            <h2>⚡ What I Do Best</h2>
+            <h2 id="skills">⚡ What I Do Best</h2>
             <div class="skills-grid">
                 <div class="skill-category">
                     <h3>Full Stack & Web</h3>
@@ -81,7 +101,63 @@
         </div>
 
         <div class="card">
-            <h2>💼 Battle-Tested Experience</h2>
+            <h2>📄 Resume & Credentials</h2>
+            <div class="resume-section">
+                <p>Download my detailed resume to see the full breakdown of my experience, skills, and accomplishments.</p>
+                <a href="./Resume.pdf" class="cta-button" download>📥 Download Resume (PDF)</a>
+                <p style="margin-top: 15px; color: #666; font-size: 0.95em;">Connect with me on LinkedIn:</p>
+                <a href="https://www.linkedin.com/in/robert-macrae-a83192390" class="cta-button" target="_blank" rel="noopener noreferrer">💼 Visit LinkedIn Profile</a>
+            </div>
+
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>📊 Technical Skills</h3>
+                    <ul class="skill-list">
+                        <li>Full Stack Development</li>
+                        <li>React, Vue.js, Angular</li>
+                        <li>Node.js, Python, C#</li>
+                        <li>MongoDB, PostgreSQL</li>
+                        <li>AWS, Docker, CI/CD</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>🎮 Game Development</h3>
+                    <ul class="skill-list">
+                        <li>Unity 3D (8+ years)</li>
+                        <li>C# Programming</li>
+                        <li>Game Architecture</li>
+                        <li>Physics & Performance</li>
+                        <li>VR/AR Integration</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>💼 Business Skills</h3>
+                    <ul class="skill-list">
+                        <li>MVP Development</li>
+                        <li>Technical Leadership</li>
+                        <li>Project Management</li>
+                        <li>Client Communication</li>
+                        <li>Agile/Scrum</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>🚀 Specializations</h3>
+                    <ul class="skill-list">
+                        <li>Real-Time Systems</li>
+                        <li>API Integration</li>
+                        <li>Data Optimization</li>
+                        <li>System Architecture</li>
+                        <li>Performance Tuning</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2 id="experience">💼 Battle-Tested Experience</h2>
             
             <div class="experience-item">
                 <div class="experience-header">
@@ -119,7 +195,7 @@
         </div>
 
         <div class="card">
-            <h2>🎯 Project Showcase (The Good Stuff)</h2>
+            <h2 id="projects">🎯 Project Showcase (The Good Stuff)</h2>
 
             <!-- Xpromo (first) -->
             <div class="project-item">
@@ -346,61 +422,6 @@
             </div>
         </div>
 
-        <div class="card">
-            <h2>📄 Resume & Credentials</h2>
-            <div class="resume-section">
-                <p>Download my detailed resume to see the full breakdown of my experience, skills, and accomplishments.</p>
-                <a href="./Resume.pdf" class="cta-button" download>📥 Download Resume (PDF)</a>
-                <p style="margin-top: 15px; color: #666; font-size: 0.95em;">Or view my qualifications summary below:</p>
-            </div>
-
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3>📊 Technical Skills</h3>
-                    <ul class="skill-list">
-                        <li>Full Stack Development</li>
-                        <li>React, Vue.js, Angular</li>
-                        <li>Node.js, Python, C#</li>
-                        <li>MongoDB, PostgreSQL</li>
-                        <li>AWS, Docker, CI/CD</li>
-                    </ul>
-                </div>
-
-                <div class="skill-category">
-                    <h3>🎮 Game Development</h3>
-                    <ul class="skill-list">
-                        <li>Unity 3D (8+ years)</li>
-                        <li>C# Programming</li>
-                        <li>Game Architecture</li>
-                        <li>Physics & Performance</li>
-                        <li>VR/AR Integration</li>
-                    </ul>
-                </div>
-
-                <div class="skill-category">
-                    <h3>💼 Business Skills</h3>
-                    <ul class="skill-list">
-                        <li>MVP Development</li>
-                        <li>Technical Leadership</li>
-                        <li>Project Management</li>
-                        <li>Client Communication</li>
-                        <li>Agile/Scrum</li>
-                    </ul>
-                </div>
-
-                <div class="skill-category">
-                    <h3>🚀 Specializations</h3>
-                    <ul class="skill-list">
-                        <li>Real-Time Systems</li>
-                        <li>API Integration</li>
-                        <li>Data Optimization</li>
-                        <li>System Architecture</li>
-                        <li>Performance Tuning</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
         <div class="cta-section">
             <h2 style="border: none; color: #667eea;">🚀 Ready to Build Something Amazing?</h2>
             <p style="font-size: 1.2em; color: #555; margin: 20px 0;">
@@ -416,6 +437,7 @@
         <p style="margin-top: 10px; opacity: 0.8;">Powered by coffee, curiosity, and clean code ☕💻✨</p>
     </footer>
 
+    <button class="theme-toggle" id="themeToggle" title="Toggle dark/light mode">🌙</button>
     <script src="script.js" defer></script>
 </body>
 </html>
